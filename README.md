@@ -31,6 +31,27 @@ Chaves estrangeiras (FK) para manter a integridade entre as tabelas;
 Restrições como NOT NULL e UNIQUE para garantir consistência;
 Tipos de dados adequados para cada informação (VARCHAR, INT, ENUM, DATETIME).
 
+TABELA USUÁRIO:
+
+| Atributos  | Tipo de Dado               | Chave | Índice | Restrição                           |
+| ---------- | -------------------------- | ----- | ------ | ----------------------------------- |
+| usuario_id | INT                        | PK    | X      | NOT NULL, AUTO_INCREMENT            |
+| nome       | VARCHAR(85)                |       |        | NOT NULL                            |
+| email      | VARCHAR(120)               |       | X      | NOT NULL, UNIQUE                    |
+| senha      | VARCHAR(255)               |       |        | NOT NULL                            |
+| tipo       | ENUM(beneficiario, doador) |       | X      | NOT NULL                            |
+| criado_em  | DATETIME                   |       |        | NOT NULL, DEFAULT CURRENT_TIMESTAMP |
+
+
+TABELA MATERIAL:
+
+| Atributos          | Tipo de Dado      | Chave | Índice | Restrição                |
+| ------------------ | ----------------- | ----- | ------ | ------------------------ |
+| material_id        | INT               | PK    | X      | NOT NULL, AUTO_INCREMENT |
+| nome               | VARCHAR(85)       |       | X      | NOT NULL                 |
+| categoria          | VARCHAR(50)       |       | X      | NOT NULL                 |
+| descricao          | TEXT              |       |        | NOT NULL                 |
+| estado_conservacao | ENUM(novo, usado) |       |        | NOT NULL                 |
 
 
 TABELA DOAÇÃO: 
