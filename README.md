@@ -62,8 +62,7 @@ doacao_id  |      INT	      |   PK	  |   X	   |NOT NULL, AUTO_INCREMENT         
 doador_id  |	    INT       |   FK    |  	X    |NOT NULL, REFERENCES                |
 material_id|    	INT	      |   FK	  |   X	   |NOT NULL, UNIQUE, REFERENCES        |
 data_disp  |	DATETIME		  |        	|        |NOT NULL, DEFAULT CURRENT_TIMESTAMP |
-status	   |ENUM(disponivel,|         |   X    |NOT NULL, DEFAULT                   |
-           |reservado,doado)|	 
+status	   |ENUM(disponivel,reservado, doado|         |   X    |NOT NULL, DEFAULT                   |
 
 
 TABELA SOLICITAÇÃO:
@@ -74,8 +73,7 @@ solicitacao_id  |     INT	          |   PK	  |   X	   |NOT NULL, AUTO_INCREMENT 
 doacao_id       |	    INT           |   FK    |   X    |NOT NULL, REFERENCES                |
 usuario_id      |    	INT	          |   FK	  |   X	   |NOT NULL, UNIQUE, REFERENCES        |
 data_solicitacao|	    TEXT		      |         |        |NULL                                |
-mensagem_status	|ENUM(pendente,     |         |   X    |NOT NULL, DEFAULT                   |
-                |aprovada,rejeitada)|	 
+mensagem_status	|ENUM(pendente, aprovada, rejeitada)     |         |   X    |NOT NULL, DEFAULT                   |
 
 
 
