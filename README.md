@@ -26,10 +26,10 @@ O banco de dados foi modelado com as seguintes tabelas principais:
 - solicitacao: 
 
 # As tabelas foram definidas com:
-Chaves primárias (PK) para identificação única dos registros
-Chaves estrangeiras (FK) para manter a integridade entre as tabelas
-Restrições como NOT NULL e UNIQUE para garantir consistência
-Tipos de dados adequados para cada informação (VARCHAR, INT, ENUM, DATETIME)
+Chaves primárias (PK) para identificação única dos registros;
+Chaves estrangeiras (FK) para manter a integridade entre as tabelas;
+Restrições como NOT NULL e UNIQUE para garantir consistência;
+Tipos de dados adequados para cada informação (VARCHAR, INT, ENUM, DATETIME).
 
 
 
