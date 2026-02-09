@@ -22,8 +22,8 @@ O diagrama abaixo representa as tabelas do sistema e seus relacionamentos.
 O banco de dados foi modelado com as seguintes tabelas principais:
 - usuario: armazena os dados dos usuários da plataforma, podendo ser do tipo doadores ou beneficiários.
 - material: registra os materiais escolares disponíveis para doação.
-- doacao: 
-- solicitacao: 
+- doacao: representa o material que será doado com status e data de disponibilização.
+- solicitacao: armazena as solicitações feitas pelos usuários com data de solicitação e status do pedido.
 
 # As tabelas foram definidas com:
 Chaves primárias (PK) para identificação única dos registros;
