@@ -75,4 +75,45 @@ data_solicitacao|	    TEXT		      |         |        |NULL                      
 mensagem_status	|ENUM(pendente, aprovada, rejeitada)     |         |   X    |NOT NULL, DEFAULT                   |
 
 
+# 👣 Modelagem SQL para Prototipar o Modelo Físico
 
+Nessa etapa foi desenvolvido o script SQL responsável pela criação das tabelas, seus atributos e relacionamentos, permitindo posteriormente a geração do modelo físico do banco de dados do sistema de doações.
+
+'''sql
+CREATE TABLE usuario (
+  usuario_id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(85) NOT NULL,
+  email VARCHAR(120) NOT NULL UNIQUE,
+  senha VARCHAR(255) NOT NULL,
+  tipo ENUM('beneficiario','doador') NOT NULL,
+  criado_em DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE material (
+  material_id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(85) NOT NULL,
+  categoria VARCHAR(50) NOT NULL,
+  descricao TEXT NOT NULL,
+  estado_conservacao ENUM('novo','usado') NOT NULL
+);
+
+CREATE TABLE doacao (
+  doacao_id INT AUTO_INCREMENT PRIMARY KEY,
+  doador_id INT NOT NULL,
+  material_id INT NOT NULL UNIQUE,
+  data_disp DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  status ENUM('disponivel','reservado','doado') NOT NULL DEFAULT 'disponivel',
+  FOREIGN KEY (doador_id) REFERENCES usuario(usuario_id),
+  FOREIGN KEY (material_id) REFERENCES material(material_id)
+);
+
+CREATE TABLE solicitacao (
+  solicitacao_id INT AUTO_INCREMENT PRIMARY KEY,
+  doacao_id INT NOT NULL,
+  usuario_id INT NOT NULL,
+  data_solicitacao DATETIME NULL,
+  mensagem_status ENUM('pendente','aprovada','rejeitada') NOT NULL DEFAULT 'pendente',
+  FOREIGN KEY (doacao_id) REFERENCES doacao(doacao_id),
+  FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id)
+);
+'''
