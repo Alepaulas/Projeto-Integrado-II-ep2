@@ -9,10 +9,7 @@ Este entregável tem como objetivo transformar o modelo do sistema de doação d
 O diagrama abaixo representa as tabelas do sistema e seus relacionamentos.
 
 
-
-
-
-
+<img width="777" height="523" alt="datagrama_mysql_doacao" src="https://github.com/user-attachments/assets/7593e8d1-dede-4f96-b46b-e5c5ad786776" />
 
 
 
