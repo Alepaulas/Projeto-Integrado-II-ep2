@@ -75,11 +75,11 @@ data_solicitacao|	    TEXT		      |         |        |NULL                      
 mensagem_status	|ENUM(pendente, aprovada, rejeitada)     |         |   X    |NOT NULL, DEFAULT                   |
 
 
-# 👣 Modelagem SQL para Prototipar o Modelo Físico
+# Modelagem SQL para Prototipar o Modelo Físico
 
-Nessa etapa foi desenvolvido o script SQL responsável pela criação das tabelas, seus atributos e relacionamentos, permitindo posteriormente a geração do modelo físico do banco de dados do sistema de doações.
+Foi desenvolvido o script SQL responsável pela criação das tabelas, seus atributos e relacionamentos, permitindo posteriormente a geração do modelo físico do banco de dados do sistema de doações.
 
-'''sql
+```sql
 CREATE TABLE usuario (
   usuario_id INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(85) NOT NULL,
@@ -116,4 +116,4 @@ CREATE TABLE solicitacao (
   FOREIGN KEY (doacao_id) REFERENCES doacao(doacao_id),
   FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id)
 );
-'''
+
