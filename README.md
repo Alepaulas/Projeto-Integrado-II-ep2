@@ -13,6 +13,8 @@ O diagrama abaixo representa as tabelas do sistema e seus relacionamentos.
 
 
 
+# [Relatório da Atividade](https://docs.google.com/document/d/1emMiAg7GH-lP7LxfwCPgrTagoQ2P7Xg9CYx2CFunj_4/edit?tab=t.0)
+
 
 # 🧩 Estrutura das Tabelas
 
