@@ -71,7 +71,7 @@ Atributos	      | Tipo de Dado      |	Chave   | Índice |       Restrição     
 --------------- |-------------------|---------|--------|------------------------------------|
 solicitacao_id  |     INT	          |   PK	  |   X	   |NOT NULL, AUTO_INCREMENT            |
 doacao_id       |	    INT           |   FK    |   X    |NOT NULL, REFERENCES                |
-usuario_id      |    	INT	          |   FK	  |   X	   |NOT NULL, UNIQUE, REFERENCES        |
+usuario_id      |    	INT	          |   FK	  |   X	   |NOT NULL, REFERENCES        |
 data_solicitacao|	    TEXT		      |         |        |NULL                                |
 mensagem_status	|ENUM(pendente, aprovada, rejeitada)     |         |   X    |NOT NULL, DEFAULT                   |
 
