@@ -31,15 +31,22 @@ Restrições como NOT NULL e UNIQUE para garantir consistência;
 Tipos de dados adequados para cada informação (VARCHAR, INT, ENUM, DATETIME).
 
 TABELA USUÁRIO:
-
-| Atributos  | Tipo de Dado               | Chave | Índice | Restrição                           |
-| ---------- | -------------------------- | ----- | ------ | ----------------------------------- |
-| usuario_id | INT                        | PK    | X      | NOT NULL, AUTO_INCREMENT            |
-| nome       | VARCHAR(85)                |       |        | NOT NULL                            |
-| email      | VARCHAR(120)               |       | X      | NOT NULL, UNIQUE                    |
-| senha      | VARCHAR(255)               |       |        | NOT NULL                            |
-| tipo       | ENUM(beneficiario, doador) |       | X      | NOT NULL                            |
-| criado_em  | DATETIME                   |       |        | NOT NULL, DEFAULT CURRENT_TIMESTAMP |
+| Atributos            | Tipo de Dado                   | Chave | Índice | Restrição                           |
+| -------------------- | ------------------------------ | ----- | ------ | ----------------------------------- |
+| usuario_id           | INT                            | PK    | X      | NOT NULL, AUTO_INCREMENT            |
+| nome                 | VARCHAR(85)                    |       |        | NOT NULL                            |
+| cpf                  | VARCHAR(11)                    |       | X      | NOT NULL, UNIQUE                    |
+| rg                   | VARCHAR(20)                    |       |        | NULL                                |
+| data_nascimento      | DATE                           |       |        | NOT NULL                            |
+| situacao_educacional | ENUM(estudante, nao_estudante) |       |        | NOT NULL                            |
+| logradouro           | VARCHAR(120)                   |       |        | NOT NULL                            |
+| bairro               | VARCHAR(80)                    |       |        | NOT NULL                            |
+| cidade               | VARCHAR(80)                    |       |        | NOT NULL                            |
+| uf                   | CHAR(2)                        |       |        | NOT NULL                            |
+| email                | VARCHAR(120)                   |       | X      | NOT NULL, UNIQUE                    |
+| senha                | VARCHAR(255)                   |       |        | NOT NULL                            |
+| tipo                 | ENUM(beneficiario, doador)     |       | X      | NOT NULL                            |
+| criado_em            | DATETIME                       |       |        | NOT NULL, DEFAULT CURRENT_TIMESTAMP |
 
 
 TABELA MATERIAL:
@@ -83,6 +90,14 @@ Foi desenvolvido o script SQL responsável pela criação das tabelas, seus atri
 CREATE TABLE usuario (
   usuario_id INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(85) NOT NULL,
+  cpf VARCHAR(11),
+  rg VARCHAR(20),
+  data_nascimento DATE,
+  situacao_educacional VARCHAR(50),
+  logradouro VARCHAR(120),
+  bairro VARCHAR(80),
+  cidade VARCHAR(80),
+  uf CHAR(2),
   email VARCHAR(120) NOT NULL UNIQUE,
   senha VARCHAR(255) NOT NULL,
   tipo ENUM('beneficiario','doador') NOT NULL,
